@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="Two Way Data Binding">
+        <div class="slds-var-m-around_medium">
+            <lightning-input type="text" label="Enter some text" onkeyup={changehandler} ></lightning-input>
+            <div class="slds-text-color_success slds-text-heading_medium">My full Name is <strong class="slds-text-color_error slds-text-heading_medium">{address.fullname}</strong>  and My age is {address.age}</div>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Getters in LWC">
+        <div class="slds-var-m-around_medium">
+           <div>My first Name is {usersname}</div>  
+           <div>Num one is {num1} and Num Two is {num2} and their multiplication is {multipy}</div>
+        </div>
+        <div class="slds-var-m-around_large">Hello Naveen</div>
+        
+        <lightning-card title="Conditional Rendering">
+            <div class="slds-var-m-around_medium">
+                <lightning-button title="Show Data" label="Show Data" variant="brand" onclick={handlerChange}>
+                </lightning-button>
+                
+            <template lwc:if={isVisible}>
+              <div>We are Learning LWC Course Zero to Hero from Udey</div>
+            </template>
+            <template lwc:elseif={isVisible}>
+                <div>you can not see the data. Until click on the Button</div>
+            </template>
+            <lightning-input type="text" label="Enter Corrct Input to Show Data" onkeyup={inputhandler}>
+
+            </lightning-input>  
+            <template lwc:if={helloHandler} >
+                <div>Hurray!!...You have Typed Correct word</div>
+            </template>
+        </div>
+        </lightning-card>
+    </lightning-card>
+</template>

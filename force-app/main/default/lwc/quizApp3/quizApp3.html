@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Lightning Quiz App3">
+        <div class="slds-var-m-around_medium slds-var-m-bottom_medium">
+            <form>
+          <template for:each={myquestions} for:item="sfdc">
+            <div key={sfdc.id}>
+                <strong>{sfdc.id} - {sfdc.Question}</strong>
+                <div class="slds-grid slds-gutters slds-var-m-bottom_medium">
+                    <div class="slds-col">
+                        <input type="radio" name={sfdc.id} value="a" onchange={changehandler}/>
+                    {sfdc.options.a}
+                    </div>
+                    <div class="slds-col">
+                        <input type="radio" name={sfdc.id} value="b" onchange={changehandler}/>
+                        {sfdc.options.b}
+                    </div>
+                    <div class="slds-col">
+                        <input type="radio" name={sfdc.id} value="c" onchange={changehandler}/>
+                        {sfdc.options.c}
+                    </div>
+                    </div>
+            </div>
+        
+          </template>
+        </form>
+       
+        <lightning-button label="submit" title="submit quiz" variant="brand" onclick={submithandler} disabled={allNotselected} class="slds-m-around_medium"></lightning-button>
+        <lightning-button label="Reset" title="Reset quiz" variant="destructive" onclick={resethandler}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

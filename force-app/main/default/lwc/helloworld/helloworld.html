@@ -1,0 +1,35 @@
+<template>
+    
+    <lightning-card  title="Zeto to Hero LWC training">
+      
+        <div class="slds-var-m-around_medium">
+            <lightning-input type="text" 
+            label="Enter some text" 
+            onkeyup={changehandler}></lightning-input>
+            <div>My name is {fullname} and my title is {title}</div>
+        </div>
+    </lightning-card>
+
+
+    <lightning-card  title="@Track Properties">
+      
+        <div class="slds-var-m-around_medium">
+            <lightning-input type="text" 
+            label="Enter City name" 
+            onkeyup={trackhandler}></lightning-input>
+            <div>My city is {address.city} and my state is {address.state}</div>
+        </div>
+    </lightning-card>
+
+
+    <lightning-card  title="Getter Properties">
+      
+        <div class="slds-var-m-around_medium">
+            
+            <div>Num1 is {num1} and Num2 is {num2} and their Multiplication {gettrsmethod}</div>
+            <div>The first Username is {gettersUsers}</div>
+        </div>
+    </lightning-card>
+
+    
+</template>
